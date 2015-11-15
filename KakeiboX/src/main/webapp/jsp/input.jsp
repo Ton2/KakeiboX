@@ -1,12 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=Shift_JIS" %>
 <%@ page pageEncoding="Shift_JIS" %>
-<%@ page import="java.text.DateFormat" %>
-<%@ page import="java.util.*" %>
-<%@ page import="java.text.*" %>
-<%
-	Date dtoday = new Date();
-	SimpleDateFormat today = new SimpleDateFormat("yyyymmdd");
-%>
+<%@ page import="jp.co.KakeiboX.common.*" %>
+
+<% util common = new util(); %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,8 +19,31 @@
 			入力日
 		</td>
 		<td>
-			<select name="inputyear" size="1">
-			<option value=""></option>
+			<input type="text" id="inputyear" name="inputyear" size="4" maxlength="4" value="<%= common.todayYYYY %>">年
+			<input type="text" id="inputmonth" name="inputmonth" size="2" maxlength="2" value="<%= common.todayMM %>">月
+			<input type="text" id="inputday" name="inputday" size="2" maxlength="2" value="<%= common.todayDD %>">日
+		</td>
+	</tr>
+	<tr>
+		<td>
+			出納区分
+		</td>
+		<td>
+			<select id="suitokbn" name="suitokbn">
+				<option value="1">支出</option>
+				<option value="2">収入</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			内容
+		</td>
+		<td>
+			<select id="naiyo" name="naiyo">
+			
+				<option value="1">支出</option>
+				<option value="2">収入</option>
 			</select>
 		</td>
 	</tr>

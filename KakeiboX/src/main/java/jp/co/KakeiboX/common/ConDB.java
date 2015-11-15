@@ -8,12 +8,11 @@ import java.util.Properties;
 
 public class ConDB {
 	
-	//private int KBN;
+	//プロパティの取得
 	GetProp prop = new GetProp();
 	
 	public String GetSSTKbn(int KBN)
 	{
-
 		String strSST = "";
 		try{
 			Driver d = (Driver) Class.forName(prop.SQLDriverName).newInstance();
