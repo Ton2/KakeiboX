@@ -1,0 +1,30 @@
+html{
+	width: 95%;
+	height: 95%;
+}
+
+body{
+	width: 95%;
+	height: 95%;
+	background: #ffffdd;
+}
+
+.div_linecontainer{
+	width: 100%;
+}
+
+.div_title{
+	display: inline-block;
+	width: 10%;
+	background: #ffffaa;
+	margin: 1px;
+	padding: 5px;
+}
+
+.div_naiyo{
+	display: inline-block;
+	width: 80%;
+	background: #ffffcc;
+	margin: 1px;
+	padding: 5px;
+}

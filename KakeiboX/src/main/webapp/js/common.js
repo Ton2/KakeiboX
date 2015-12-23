@@ -1,17 +1,59 @@
-
-//Enterã‚­ãƒ¼æŠ¼ä¸‹æ™‚ã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã‚’ã‚ã¦ã‚‹é …ç›®ã‚’æŒ‡å®š
-//formåç§°ã¯ã€Œformã€ã«ã—ã¦ãŠãã“ã¨
-//å¼•æ•°ï¼‘ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆID
-function setCursorOnEnter(objName){
+//******************************************************************
+//getElementById
+//ˆø”Fid
+//–ß‚è’lFelement
+//*******************************
+function getElementById(id){
+	var element;
+	element = document.getElementById(id);
+	return element;
+}
+//******************************************************************
+//Function setCursorOnEnter
+//
+//ˆø”FobjId
+//*******************************
+function setCursorOnEnter(objId){
 	if (event.keyCode == 13){
-		document.form.elements[objName].focus();
+		setFocus(objId);
+		return;
 	}
 }
-
-//Numericãƒã‚§ãƒƒã‚¯
+//******************************************************************
+//Function setFocus
+//
+//ˆø”FobjId
+//*******************************
+function setFocus(objId){
+	getElementById(objId).focus;
+	return;
+}
+//******************************************************************
+//Function chkNumeric
+//ˆø”1FobjId
+//ˆø”2FobjName
+//*******************************
 function chkNumeric(objId,objName){
-	if(document.form.elements[objId].value.match(/[^0-9]+/)){
-		alert(objName + 'ã«æ•°å­—ä»¥å¤–ãŒå…¥åŠ›ã•ã‚Œã¦ã„ã¾ã™ã€‚');
-		setCursorOnEnter(objId);
+	if(getElementById(objId).value.match(/[^0-9]+/)){
+		alert(objName + '‚É‚Í”š‚Ì‚İ‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B');
+		setFocus(objId);
+		return false;
 	}
+	return true;
 }
+//******************************************************************
+//Function chkRequiredText
+//ˆø”1FobjId
+//ˆø”2FobjName
+//–ß‚è’l@OK¨True
+//@@@@@NG¨False
+//*******************************
+function chkRequiredText(objId,objName){
+	if(getElementById(objId).value == ""){
+		alert(objName + '‚Í•K{€–Ú‚Å‚·B');
+		setFocus(objId);
+		return false;
+	} 
+	return true;
+}
+//******************************************************************
