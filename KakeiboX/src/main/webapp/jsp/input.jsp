@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=Shift_JIS" %>
 <%@ page pageEncoding="Shift_JIS" %>
 <%@ page import="jp.co.KakeiboX.common.*" %>
+<%@ page import="jp.co.KakeiboX.KakeiboData" %>
+
+<% KakeiboData KData = new KakeiboData(); %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -15,12 +18,14 @@
 <script type="text/javascript">
 	function Check(){
 		//項目チェック
-		if (!chkRequiredText('inputyear','入力年') ||
-			!chkNumeric('inputyear','入力年')) return false;
-		if (!chkRequiredText('inputmonth','入力月') ||
-			!chkNumeric('inputmonth','入力月')) return false;
-		if (!chkRequiredText('inputday','入力日') ||
-			!chkNumeric('inputday','入力日')) return false;
+		if (
+			!chkRequiredText('inputyear','入力年') ||
+			!chkNumeric('inputyear','入力年') ||
+			!chkRequiredText('inputmonth','入力月') ||
+			!chkNumeric('inputmonth','入力月') ||
+			!chkRequiredText('inputday','入力日') ||
+			!chkNumeric('inputday','入力日')
+			) return false;
 	}
 	
 	function CheckAndSubmit(){
@@ -28,15 +33,16 @@
 	}
 	
 	function InitScreen(){
-		getElementById("inputyear").value = "";
+		var ArrTextCont = [];
+		
 	}
 </script> 
-<form id="form" name="form" method="post" onsubmit="check();return false;">
+<form id="form" name="form" method="post">
 <div id="main">
 <div class="div_linecontainer">
 	<div class="div_title">入力日</div>
 	<div class="div_naiyo">
-		<input type="text" id="inputyear" name="textbox" size="4" maxlength="4" value=""
+		<input type="text" id="inputyear" name="textbox" size="4" maxlength="4" value="<%= KData.inputyear %>"
 		style="ime-mode:disabled;" onKeydown="setCursorOnEnter('inputmonth');">年
 		<input type="text" id="inputmonth" name="textbox" size="2" maxlength="2" value=""
 		style="ime-mode:disabled;" onKeydown="setCursorOnEnter('inputday');">月
@@ -48,6 +54,7 @@
 	<div class="div_title">出納区分</div>
 	<div class="div_naiyo">
 		<select id="suitokbn" name="suitokbn" onKeydown="setCursorOnEnter('naiyokbn');">
+			<option value="0"></option>
 			<option value="1">支出</option>
 			<option value="2">収入</option>
 		</select>
@@ -79,6 +86,7 @@
 <div class="div_linecontainer">
 	<input type="button" id="doSubmit" value="登録" onClick="CheckAndSubmit();">
 	<input type="button" id="clear" value="クリア" onClick="InitScreen();">
+	<input type="button" id="test" value="テスト" onClick="testSubmit();">
 </div>
 </div>
 
