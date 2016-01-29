@@ -3,7 +3,6 @@
 <%@ page import="jp.co.KakeiboX.common.*" %>
 <%@ page import="jp.co.KakeiboX.KakeiboData" %>
 
-<% KakeiboData KData = new KakeiboData(); %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -37,12 +36,12 @@
 		
 	}
 </script> 
-<form id="form" name="form" method="post">
+<form id="form" name="form">
 <div id="main">
 <div class="div_linecontainer">
 	<div class="div_title">“ü—Í“ú</div>
 	<div class="div_naiyo">
-		<input type="text" id="inputyear" name="textbox" size="4" maxlength="4" value="<%= KData.inputyear %>"
+		<input type="text" id="inputyear" name="textbox" size="4" maxlength="4" value=""
 		style="ime-mode:disabled;" onKeydown="setCursorOnEnter('inputmonth');">”N
 		<input type="text" id="inputmonth" name="textbox" size="2" maxlength="2" value=""
 		style="ime-mode:disabled;" onKeydown="setCursorOnEnter('inputday');">ŒŽ
