@@ -11,6 +11,7 @@ import jp.co.KakeiboX.data.KakeiboData;
  */
 
 public class KakeiboDisp {
+
 	KakeiboData DataObj = new KakeiboData();
 	
 	void main(){

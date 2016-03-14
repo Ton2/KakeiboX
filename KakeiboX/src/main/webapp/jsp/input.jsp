@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=Shift_JIS" %>
 <%@ page pageEncoding="Shift_JIS" %>
 <%@ page import="jp.co.KakeiboX.common.*" %>
-<%@ page import="jp.co.KakeiboX.KakeiboData" %>
-
+<%@ page import="jp.co.KakeiboX.common.GetProp" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -12,6 +11,9 @@
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 <title>‰ÆŒv•ë“ü—Í</title>
 </head>
+<%
+GetProp prop = new GetProp();
+%>
 <body>
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript">
@@ -78,7 +80,7 @@
 <div class="div_linecontainer">
 	<div class="div_title">”õl</div>
 	<div class="div_naiyo">
-		<input type="text" id="biko" name="biko" size="50" maxlength="50" value=""
+		<input type="text" id="biko" name="biko" size="50" maxlength="50" value="<%= prop.getSQLDriverName() %>"
 		 onKeydown="setCursorOnEnter('submit');">
 	</div>
 </div>

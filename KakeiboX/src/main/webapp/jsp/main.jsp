@@ -1,7 +1,17 @@
 <%@ page import="jp.co.KakeiboX.common.*" %>
+<%@ page import="jp.co.KakeiboX.common.GetProp" %>
 <%@ page pageEncoding="Shift_JIS" %>
 <html>
 <body>
+<%
+GetProp prop = new GetProp();
+%>
+<%= prop.getSQLDriverName() %><br>
+<%= prop.getDBLocation() %><br>
+<%= prop.getDBName() %><br>
+<%= prop.getDBUser() %><br>
+<%= prop.getDBPass() %><br>
+
 <form id="main" name="main">
 <input type="hidden" id="movecontrol">
 <input type="button" id="inputday" value="“ü—Í"><br><br>
