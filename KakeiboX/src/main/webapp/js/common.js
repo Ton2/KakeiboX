@@ -4,9 +4,12 @@
 //ñﬂÇËílÅFelement
 //*******************************
 function getElementById(id){
-	var element;
-	element = document.getElementById(id);
-	return element;
+	var elm = document.getElementById(id);
+	return elm;
+}
+function getElementsByClassName(className){
+	var elms = document.getElementsByClassName(className);
+	return elms;
 }
 //******************************************************************
 //Function setCursorOnEnter
